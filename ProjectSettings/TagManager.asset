@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Platform
   - Pass
+  - Pattern
   layers:
   - Default
   - TransparentFX

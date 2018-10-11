@@ -82,6 +82,11 @@ public class BallController : MonoBehaviour {
                 }
             }
         }
+
+        if (collision.tag == "Pattern")
+        {            
+            Instantiate(GameControl.Instance.patternPool[Random.Range(0, GameControl.Instance.patternPool.Length)], GameControl.Instance.patternSpawnPt.transform.position, Quaternion.identity);
+        }
     }
 
     private void SetNitro(bool nitro)

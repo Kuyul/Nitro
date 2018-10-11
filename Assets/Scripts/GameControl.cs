@@ -9,6 +9,9 @@ public class GameControl : MonoBehaviour {
 
     //Declare public variables
     public Text ScoreText;
+    public GameObject patternSpawnPt;
+    public GameObject[] patternPool;
+ 
 
     //Declare private variables
     private int CurrentScore = 0;
