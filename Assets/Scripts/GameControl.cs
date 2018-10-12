@@ -11,13 +11,17 @@ public class GameControl : MonoBehaviour {
     public Text ScoreText;
     public GameObject patternSpawnPt;
     public GameObject[] patternPool;
- 
+    public bool Nitro = false;
+
+    //Gameobjects Controllers
+    public PlayerController Player; //Player
+    public DeathpoolController DeathPool; //Deathpool
 
     //Declare private variables
     private int CurrentScore = 0;
 
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start () {
         if (Instance == null)
         {
             Instance = this;
@@ -26,15 +30,30 @@ public class GameControl : MonoBehaviour {
         {
             Destroy(gameObject);
         }
+
+        //Globally initialise to non-nitro mode
+        DeactivateNitro();
     }
-	
-	void Update () {
-		
-	}
 
     public void AddScore(int score)
     {
         CurrentScore += score;
         ScoreText.text = "Score: " + CurrentScore;
+    }
+
+    //Global Nitro Activation
+    public void ActivateNitro()
+    {
+        Nitro = true;
+        Player.ActivateNitro();
+        DeathPool.ActivateNitro();
+    }
+
+    //Global Nitro Deactivation
+    public void DeactivateNitro()
+    {
+        Nitro = false;
+        Player.DeactivateNitro();
+        DeathPool.DeactivateNitro();
     }
 }

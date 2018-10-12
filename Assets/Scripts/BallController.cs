@@ -5,29 +5,27 @@ using UnityEngine.SceneManagement;
 
 public class BallController : MonoBehaviour {
 
+    //Declare public variables
+    public Rigidbody2D DeathPool;
+    public float DeathPoolSpeed = 0.5f;
+    public int NoPlatformsForNitro = 5;
+
     //Declare private variables
     private Vector3 TouchPosition;
     private bool IsDragging;
     private Rigidbody2D rb;
     private int platformsPassed = 0;
     private int platformsDestroyed = 0;
-    private bool Nitro = false;
     private SpriteRenderer sr;
 
     // Use this for initialization
     void Start () {
         rb = GetComponent<Rigidbody2D>();
         sr = GetComponent<SpriteRenderer>();
-	}
+    }
 	
 	// Update is called once per frame
 	void Update () {
-
-        if (Nitro)
-        {
-
-        }
-
         //Drag to move mechanic - logs the initial touch position and move the ball accordingly
         if (Input.GetMouseButtonDown(0))
         {
@@ -53,52 +51,74 @@ public class BallController : MonoBehaviour {
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        //On colliding on a platform, perform differing function depending on its Nitro status
         if (collision.tag == "Platform")
         {
-            if (Nitro)
+            //If Nitro mode, bonus score is added for consecutive platforms broken, +1 -> +2 -> +3
+            if (GameControl.Instance.Nitro)
             {
                 collision.gameObject.SetActive(false);
                 platformsDestroyed++;
                 GameControl.Instance.AddScore(platformsDestroyed);
             }
+            //If Nitro mode is inactive, game over
             else
             {
                 SceneManager.LoadScene(0);
             }
         }
 
+        //On passing a platform, perform differing functions depending on its Nitro status
         if(collision.tag == "Pass")
         {
-            if (Nitro)
+            GameControl.Instance.AddScore(1);
+            //When Nitro mode
+            if (GameControl.Instance.Nitro)
             {
+                UpdateNitro(false);
             }
             else
+            //During normal mode, fill up nitro gauge, and set nitro mode to active when it passes the nitro threshold
             {
-                GameControl.Instance.AddScore(1);
                 platformsPassed++;
-                if (platformsPassed >= 5)
+                if (platformsPassed >= NoPlatformsForNitro)
                 {
-                    SetNitro(true);
+                    UpdateNitro(true);
                 }
             }
         }
 
+        //Generate next pattern
         if (collision.tag == "Pattern")
         {            
             Instantiate(GameControl.Instance.patternPool[Random.Range(0, GameControl.Instance.patternPool.Length)], GameControl.Instance.patternSpawnPt.transform.position, Quaternion.identity);
         }
     }
 
-    private void SetNitro(bool nitro)
+    private void UpdateNitro(bool nitro)
     {
-        Nitro = nitro;
+        //Perform differing functions depending on the updated Nitro status
         if (nitro == true) {
-            sr.color = Color.red;
+            GameControl.Instance.ActivateNitro();
+            this.ActivateNitro();
         }
         else
         {
-            sr.color = Color.white;
+            GameControl.Instance.DeactivateNitro();
+            this.DeactivateNitro();
         }
+    }
 
+    //TODO: only the colours change for now, but later we'll make it a sprite change or something
+    public void ActivateNitro()
+    {
+        sr.color = Color.red;
+        platformsPassed = 0; //Reset platforms passed count
+    }
+
+    public void DeactivateNitro()
+    {
+        sr.color = Color.white;
+        platformsDestroyed = 0; //Reset platforms destroyed count
     }
 }
