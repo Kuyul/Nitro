@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class GameControl : MonoBehaviour {
+public class GameControl : MonoBehaviour
+{
 
     public static GameControl Instance;
 
@@ -11,6 +12,13 @@ public class GameControl : MonoBehaviour {
     public Text ScoreText;
     public GameObject patternSpawnPt;
     public GameObject[] patternPool;
+
+    public GameObject trail;
+    public GameObject trailCentre;
+    public GameObject trailNitro;
+    public GameObject platformSmall;
+    public GameObject platformLarge;
+
     public bool Nitro = false;
 
     //Gameobjects Controllers
@@ -21,7 +29,8 @@ public class GameControl : MonoBehaviour {
     private int CurrentScore = 0;
 
     // Use this for initialization
-    void Start () {
+    void Start()
+    {
         if (Instance == null)
         {
             Instance = this;

@@ -57,7 +57,12 @@ public class BallController : MonoBehaviour {
             //If Nitro mode, bonus score is added for consecutive platforms broken, +1 -> +2 -> +3
             if (GameControl.Instance.Nitro)
             {
+                Vector2 localPosition = new Vector2 (transform.position.x, transform.position.y+0.3f);
                 collision.gameObject.SetActive(false);
+                GameObject platformS = Instantiate(GameControl.Instance.platformSmall, localPosition, Quaternion.identity);
+                Destroy(platformS, 2);
+                GameObject platformL = Instantiate(GameControl.Instance.platformLarge, localPosition, Quaternion.identity);
+                Destroy(platformL, 2);
                 platformsDestroyed++;
                 GameControl.Instance.AddScore(platformsDestroyed);
             }
@@ -112,12 +117,18 @@ public class BallController : MonoBehaviour {
     //TODO: only the colours change for now, but later we'll make it a sprite change or something
     public void ActivateNitro()
     {
+        GameControl.Instance.trailCentre.SetActive(true);
+        GameControl.Instance.trailNitro.SetActive(true);
+        GameControl.Instance.trail.SetActive(false);
         sr.color = Color.red;
         platformsPassed = 0; //Reset platforms passed count
     }
 
     public void DeactivateNitro()
     {
+        GameControl.Instance.trailCentre.SetActive(false);
+        GameControl.Instance.trailNitro.SetActive(false);
+        GameControl.Instance.trail.SetActive(true);
         sr.color = Color.white;
         platformsDestroyed = 0; //Reset platforms destroyed count
     }
