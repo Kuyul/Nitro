@@ -18,6 +18,8 @@ public class GameControl : MonoBehaviour
     public GameObject trailNitro;
     public GameObject platformSmall;
     public GameObject platformLarge;
+    public GameObject trailSide1;
+    public GameObject trailSide2;
 
     public bool Nitro = false;
 

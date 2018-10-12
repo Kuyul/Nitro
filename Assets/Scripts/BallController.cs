@@ -126,6 +126,8 @@ public class BallController : MonoBehaviour {
         GameControl.Instance.trailCentre.SetActive(true);
         GameControl.Instance.trailNitro.SetActive(true);
         GameControl.Instance.trail.SetActive(false);
+        GameControl.Instance.trailSide1.SetActive(true);
+        GameControl.Instance.trailSide2.SetActive(true);
         sr.color = Color.red;
         platformsPassed = 0; //Reset platforms passed count
     }
@@ -135,6 +137,8 @@ public class BallController : MonoBehaviour {
         GameControl.Instance.trailCentre.SetActive(false);
         GameControl.Instance.trailNitro.SetActive(false);
         GameControl.Instance.trail.SetActive(true);
+        GameControl.Instance.trailSide1.SetActive(false);
+        GameControl.Instance.trailSide2.SetActive(false);
         sr.color = Color.white;
         platformsDestroyed = 0; //Reset platforms destroyed count
     }
