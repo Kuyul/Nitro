@@ -25,6 +25,7 @@ public class DeathpoolController : MonoBehaviour {
         Vector3 newPosRelativeToCamera = GetCameraPosition() - newPosition;
 
         //We don't want the deathpool to drop below the initial position
+        //If the new position of the deathpool is further than the initial position (relative to camera, then stop moving)
         if (newPosRelativeToCamera.y <= InitialPosRelativetoCamera.y)
         {
             rb.MovePosition(newPosition);
@@ -51,9 +52,16 @@ public class DeathpoolController : MonoBehaviour {
         Velocity = new Vector2(0, newSpeed + MoveInAwaySpeed);
     }
 
-    private void StopMovingOut()
-    {
-        float newSpeed = GameControl.Instance.Player.NitroSpeed;
+    private void StopMovingOut() { 
+        float newSpeed;
+        if (GameControl.Instance.Nitro)
+        {
+            newSpeed = GameControl.Instance.Player.NitroSpeed;
+        }
+        else
+        {
+            newSpeed = GameControl.Instance.Player.InitialSpeed + MoveInAwaySpeed;
+        }
         Velocity = new Vector2(0, newSpeed);
     }
 
