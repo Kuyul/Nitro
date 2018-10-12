@@ -9,6 +9,8 @@ public class BallController : MonoBehaviour {
     public Rigidbody2D DeathPool;
     public float DeathPoolSpeed = 0.5f;
     public int NoPlatformsForNitro = 5;
+    public TextMesh NitroCount;
+    public float Boundary = 1.6f;
 
     //Declare private variables
     private Vector3 TouchPosition;
@@ -44,9 +46,13 @@ public class BallController : MonoBehaviour {
             float moveAmount = Camera.main.ScreenToWorldPoint(Input.mousePosition).x - TouchPosition.x;
             Vector2 newPosition = new Vector2(moveAmount, 0);
             Vector2 targetPosition = rb.position + newPosition;
+            //Check whether new position of the ball is within the boundary, if not, don't move
+            if(Mathf.Abs(targetPosition.x) < Boundary)
             transform.position = targetPosition;
             TouchPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         }
+
+        NitroCount.text = "(" + (NoPlatformsForNitro - platformsPassed) + ")";
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
