@@ -67,4 +67,13 @@ public class GameControl : MonoBehaviour
         Player.DeactivateNitro();
         DeathPool.DeactivateNitro();
     }
+
+    public void ActivateTrail(bool input)
+    {
+        trailCentre.SetActive(input);
+        trailNitro.SetActive(input);
+        trail.SetActive(!input);
+        trailSide1.SetActive(input);
+        trailSide2.SetActive(input);
+    }
 }

@@ -18,12 +18,10 @@ public class BallController : MonoBehaviour {
     private Rigidbody2D rb;
     private int platformsPassed = 0;
     private int platformsDestroyed = 0;
-    private SpriteRenderer sr;
 
     // Use this for initialization
     void Start () {
         rb = GetComponent<Rigidbody2D>();
-        sr = GetComponent<SpriteRenderer>();
     }
 	
 	// Update is called once per frame
@@ -64,7 +62,7 @@ public class BallController : MonoBehaviour {
             if (GameControl.Instance.Nitro)
             {
                 Vector2 localPosition = new Vector2 (transform.position.x, transform.position.y+0.3f);
-                collision.gameObject.SetActive(false);
+                collision.gameObject.transform.parent.gameObject.SetActive(false);
                 GameObject platformS = Instantiate(GameControl.Instance.platformSmall, localPosition, Quaternion.identity);
                 Destroy(platformS, 2);
                 GameObject platformL = Instantiate(GameControl.Instance.platformLarge, localPosition, Quaternion.identity);
@@ -123,23 +121,13 @@ public class BallController : MonoBehaviour {
     //TODO: only the colours change for now, but later we'll make it a sprite change or something
     public void ActivateNitro()
     {
-        GameControl.Instance.trailCentre.SetActive(true);
-        GameControl.Instance.trailNitro.SetActive(true);
-        GameControl.Instance.trail.SetActive(false);
-        GameControl.Instance.trailSide1.SetActive(true);
-        GameControl.Instance.trailSide2.SetActive(true);
-        sr.color = Color.red;
+        GameControl.Instance.ActivateTrail(true);
         platformsPassed = 0; //Reset platforms passed count
     }
 
     public void DeactivateNitro()
     {
-        GameControl.Instance.trailCentre.SetActive(false);
-        GameControl.Instance.trailNitro.SetActive(false);
-        GameControl.Instance.trail.SetActive(true);
-        GameControl.Instance.trailSide1.SetActive(false);
-        GameControl.Instance.trailSide2.SetActive(false);
-        sr.color = Color.white;
+        GameControl.Instance.ActivateTrail(false);
         platformsDestroyed = 0; //Reset platforms destroyed count
     }
 }
