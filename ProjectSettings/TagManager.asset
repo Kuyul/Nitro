@@ -9,6 +9,7 @@ TagManager:
   - Pattern
   - Deathpool
   - Goal
+  - NitroBlock
   layers:
   - Default
   - TransparentFX

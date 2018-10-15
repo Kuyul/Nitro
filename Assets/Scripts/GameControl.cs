@@ -30,6 +30,7 @@ public class GameControl : MonoBehaviour
 
     //Declare private variables
     private int CurrentScore = 0;
+    private float NitrotimeLeft = 0;
 
     // Use this for initialization
     void Start()
@@ -69,6 +70,11 @@ public class GameControl : MonoBehaviour
         Player.DeactivateNitro();
         DeathPool.DeactivateNitro();
         Level.DeactivateNitro();
+    }
+
+    public void AddNitroTime()
+    {
+
     }
 
     public void ActivateTrail(bool input)

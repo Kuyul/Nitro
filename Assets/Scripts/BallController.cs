@@ -64,7 +64,7 @@ public class BallController : MonoBehaviour {
             if (GameControl.Instance.Nitro)
             {
                 Vector2 localPosition = new Vector2 (transform.position.x, transform.position.y+0.3f);
-                collision.gameObject.transform.parent.gameObject.SetActive(false);
+                collision.gameObject.SetActive(false);
                 GameObject platformS = Instantiate(GameControl.Instance.platformSmall, localPosition, Quaternion.identity);
                 Destroy(platformS, 2);
                 GameObject platformL = Instantiate(GameControl.Instance.platformLarge, localPosition, Quaternion.identity);
