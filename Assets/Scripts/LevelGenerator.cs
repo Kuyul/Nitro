@@ -8,6 +8,7 @@ public class LevelGenerator : MonoBehaviour {
     public int NumberOfPlatforms = 30;
     public Transform InitialPos;
     public GameObject[] Platforms;
+    public GameObject Goal;
     public float PlatformOffset = 2.0f;
 
     private void Start()
@@ -22,5 +23,7 @@ public class LevelGenerator : MonoBehaviour {
             Vector3 newPos = InitialPos.position + new Vector3(0, i * PlatformOffset, 0);
             Instantiate(Platforms[Random.Range(0, Platforms.Length)], newPos, Quaternion.identity);
         }
+        Vector3 endPos = InitialPos.position + new Vector3(0, NumberOfPlatforms * PlatformOffset, 0);
+        Instantiate(Goal, endPos, Quaternion.identity);
     }
 }

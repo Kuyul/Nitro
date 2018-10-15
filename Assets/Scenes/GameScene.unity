@@ -151,6 +151,7 @@ MonoBehaviour:
   - {fileID: 1017666626961160, guid: db55bc0cc3929044cbe66011822f22ae, type: 2}
   - {fileID: 1597436673121600, guid: b410d9daf544b984c902ccae8dd77e06, type: 2}
   - {fileID: 1640256711183416, guid: ed9a01f88ad8a27419a54990eb8a3446, type: 2}
+  Goal: {fileID: 1508859194929562, guid: bca11d7ce3d72454c9753a3ca1f37538, type: 2}
   PlatformOffset: 2
 --- !u!4 &139976089
 Transform:
@@ -599,7 +600,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 3
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: 5bb78d34ae4120844af1e1e24a1b2bb8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -825,7 +826,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 2
+  m_SortingOrder: 4
   m_Sprite: {fileID: 21300000, guid: 993b913cd1d944c40a0ebc2314e94534, type: 3}
   m_Color: {r: 1, g: 0.34901962, b: 0.39607844, a: 1}
   m_FlipX: 0
@@ -1067,7 +1068,7 @@ MonoBehaviour:
   ScoreText: {fileID: 257188599}
   patternSpawnPt: {fileID: 1989696079}
   patternPool:
-  - {fileID: 1331334962585372, guid: c585b6dfa164e464d857e949aeb11aa4, type: 2}
+  - {fileID: 0}
   trail: {fileID: 1170879792}
   trailCentre: {fileID: 755525320}
   trailNitro: {fileID: 17428839}
@@ -1157,7 +1158,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 2
+  m_SortingOrder: 4
   m_Sprite: {fileID: 21300000, guid: 993b913cd1d944c40a0ebc2314e94534, type: 3}
   m_Color: {r: 1, g: 0.34901962, b: 0.39607844, a: 1}
   m_FlipX: 0
@@ -1219,6 +1220,48 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1465738864846926, guid: a105798fe25632642a730f7e65af1b56,
     type: 2}
   m_PrefabInternal: {fileID: 1591008429}
+--- !u!1001 &1328638845
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4975841852417644, guid: db55bc0cc3929044cbe66011822f22ae, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4975841852417644, guid: db55bc0cc3929044cbe66011822f22ae, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4975841852417644, guid: db55bc0cc3929044cbe66011822f22ae, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4975841852417644, guid: db55bc0cc3929044cbe66011822f22ae, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4975841852417644, guid: db55bc0cc3929044cbe66011822f22ae, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4975841852417644, guid: db55bc0cc3929044cbe66011822f22ae, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4975841852417644, guid: db55bc0cc3929044cbe66011822f22ae, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4975841852417644, guid: db55bc0cc3929044cbe66011822f22ae, type: 2}
+      propertyPath: m_RootOrder
+      value: 6
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: db55bc0cc3929044cbe66011822f22ae, type: 2}
+  m_IsPrefabAsset: 0
 --- !u!1 &1444527623
 GameObject:
   m_ObjectHideFlags: 0
@@ -1619,7 +1662,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 3
   m_Sprite: {fileID: 21300000, guid: 993b913cd1d944c40a0ebc2314e94534, type: 3}
   m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_FlipX: 0
@@ -1874,7 +1917,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 3
   m_Sprite: {fileID: 21300000, guid: 993b913cd1d944c40a0ebc2314e94534, type: 3}
   m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_FlipX: 0

@@ -97,9 +97,16 @@ public class BallController : MonoBehaviour {
             }
         }
 
-        //Generate next pattern
+        //Die on Deathpool
         if (collision.tag == "Deathpool")
         {
+            SceneManager.LoadScene(0);
+        }
+
+        //Goal
+        if (collision.tag == "Goal")
+        {
+            //TODO: Should be gameEnd
             SceneManager.LoadScene(0);
         }
     }

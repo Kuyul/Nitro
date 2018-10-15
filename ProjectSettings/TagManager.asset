@@ -8,6 +8,7 @@ TagManager:
   - Pass
   - Pattern
   - Deathpool
+  - Goal
   layers:
   - Default
   - TransparentFX
