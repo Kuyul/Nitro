@@ -98,9 +98,9 @@ public class BallController : MonoBehaviour {
         }
 
         //Generate next pattern
-        if (collision.tag == "Pattern")
-        {            
-            Instantiate(GameControl.Instance.patternPool[Random.Range(0, GameControl.Instance.patternPool.Length)], GameControl.Instance.patternSpawnPt.transform.position, Quaternion.identity);
+        if (collision.tag == "Deathpool")
+        {
+            SceneManager.LoadScene(0);
         }
     }
 

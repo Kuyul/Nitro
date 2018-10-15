@@ -147,7 +147,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   NumberOfPlatforms: 30
   InitialPos: {fileID: 1444527624}
-  Platforms: []
+  Platforms:
+  - {fileID: 1017666626961160, guid: db55bc0cc3929044cbe66011822f22ae, type: 2}
+  - {fileID: 1597436673121600, guid: b410d9daf544b984c902ccae8dd77e06, type: 2}
+  - {fileID: 1640256711183416, guid: ed9a01f88ad8a27419a54990eb8a3446, type: 2}
   PlatformOffset: 2
 --- !u!4 &139976089
 Transform:
@@ -161,7 +164,7 @@ Transform:
   m_Children:
   - {fileID: 1444527624}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &202100680
 GameObject:
@@ -485,52 +488,6 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 257188597}
   m_CullTransparentMesh: 0
---- !u!1001 &270707009
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 4465549914363342, guid: c585b6dfa164e464d857e949aeb11aa4, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4465549914363342, guid: c585b6dfa164e464d857e949aeb11aa4, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 4465549914363342, guid: c585b6dfa164e464d857e949aeb11aa4, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4465549914363342, guid: c585b6dfa164e464d857e949aeb11aa4, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4465549914363342, guid: c585b6dfa164e464d857e949aeb11aa4, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4465549914363342, guid: c585b6dfa164e464d857e949aeb11aa4, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4465549914363342, guid: c585b6dfa164e464d857e949aeb11aa4, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4465549914363342, guid: c585b6dfa164e464d857e949aeb11aa4, type: 2}
-      propertyPath: m_RootOrder
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 1331334962585372, guid: c585b6dfa164e464d857e949aeb11aa4, type: 2}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: c585b6dfa164e464d857e949aeb11aa4, type: 2}
-  m_IsPrefabAsset: 0
 --- !u!1 &363165912
 GameObject:
   m_ObjectHideFlags: 0
@@ -545,7 +502,7 @@ GameObject:
   - component: {fileID: 363165917}
   m_Layer: 0
   m_Name: Death Pool
-  m_TagString: Untagged
+  m_TagString: Deathpool
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -642,7 +599,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 3
   m_Sprite: {fileID: 21300000, guid: 5bb78d34ae4120844af1e1e24a1b2bb8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
