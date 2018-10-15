@@ -26,6 +26,7 @@ public class GameControl : MonoBehaviour
     //Gameobjects Controllers
     public PlayerController Player; //Player
     public DeathpoolController DeathPool; //Deathpool
+    public LevelController Level; //Level Generator
 
     //Declare private variables
     private int CurrentScore = 0;
@@ -58,6 +59,7 @@ public class GameControl : MonoBehaviour
         Nitro = true;
         Player.ActivateNitro();
         DeathPool.ActivateNitro();
+        Level.ActivateNitro();
     }
 
     //Global Nitro Deactivation
@@ -66,6 +68,7 @@ public class GameControl : MonoBehaviour
         Nitro = false;
         Player.DeactivateNitro();
         DeathPool.DeactivateNitro();
+        Level.DeactivateNitro();
     }
 
     public void ActivateTrail(bool input)

@@ -18,10 +18,12 @@ public class BallController : MonoBehaviour {
     private Rigidbody2D rb;
     private int platformsPassed = 0;
     private int platformsDestroyed = 0;
+    private SpriteMask sm;
 
     // Use this for initialization
     void Start () {
         rb = GetComponent<Rigidbody2D>();
+        sm = GetComponent<SpriteMask>();
     }
 	
 	// Update is called once per frame
@@ -130,11 +132,13 @@ public class BallController : MonoBehaviour {
     {
         GameControl.Instance.ActivateTrail(true);
         platformsPassed = 0; //Reset platforms passed count
+        sm.enabled = true;
     }
 
     public void DeactivateNitro()
     {
         GameControl.Instance.ActivateTrail(false);
         platformsDestroyed = 0; //Reset platforms destroyed count
+        sm.enabled = false;
     }
 }
