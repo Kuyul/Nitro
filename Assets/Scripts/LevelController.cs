@@ -1,31 +1,41 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class LevelController : MonoBehaviour {
 
     //Declare public variables
-    public int NumberOfPlatforms = 30;
-    public Transform InitialPos;
-    public GameObject[] Platforms;
-    public GameObject[] NitroPlatforms;
-    public GameObject Goal;
-    public float PlatformOffset = 2.0f;
+    public Text textCurrentLevel;
+    public Text textNextLevel;
+    public GameObject[] Levels;
+
+    private int CurrentLevel;
 
     private void Start()
     {
+        CurrentLevel = PlayerPrefs.GetInt("currentLevel", 1);
+
         GenerateLevel();
+
+        textCurrentLevel.text = PlayerPrefs.GetInt("currentLevel", 1).ToString();
+        textNextLevel.text = (PlayerPrefs.GetInt("currentLevel", 1) + 1).ToString();
     }
 
     public void GenerateLevel()
     {
-        for(int i = 0; i < NumberOfPlatforms; i++)
+        Instantiate(Levels[CurrentLevel-1], new Vector3(0, 0, 0), Quaternion.identity);
+    }
+
+    public void IncrementLevel()
+    {
+        int level = CurrentLevel;
+        level++;
+        if (level > Levels.Length)
         {
-            Vector3 newPos = InitialPos.position + new Vector3(0, i * PlatformOffset, 0);
-            //var newobj = Instantiate(Platforms[Random.Range(0, Platforms.Length)], newPos, Quaternion.identity);
+            level = 1;
         }
 
-        Vector3 endPos = InitialPos.position + new Vector3(0, NumberOfPlatforms * PlatformOffset, 0);
-        Instantiate(Goal, endPos, Quaternion.identity);
+        PlayerPrefs.SetInt("currentLevel", level);
     }
 }

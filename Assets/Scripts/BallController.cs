@@ -111,7 +111,7 @@ public class BallController : MonoBehaviour {
         //Goal
         if (collision.tag == "Goal")
         {
-            //TODO: Should be gameEnd
+            GameControl.Instance.LevelComplete();
             SceneManager.LoadScene(0);
         }
     }
