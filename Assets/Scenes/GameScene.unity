@@ -355,6 +355,10 @@ Prefab:
       propertyPath: m_Name
       value: Nitro Block (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 1942926176905122, guid: 10a289c120f43034094bae865a3808f9, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 10a289c120f43034094bae865a3808f9, type: 2}
   m_IsPrefabAsset: 0
@@ -1801,7 +1805,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &139976088
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2563,11 +2567,11 @@ Transform:
   - {fileID: 1989696080}
   - {fileID: 519420032}
   - {fileID: 241582421}
+  - {fileID: 2110671364}
+  - {fileID: 1583150696}
   - {fileID: 2121220138}
   - {fileID: 1622266578}
   - {fileID: 1559243608}
-  - {fileID: 2110671364}
-  - {fileID: 1583150696}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -4261,7 +4265,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &363165913
 Transform:
   m_ObjectHideFlags: 0
@@ -5044,6 +5048,10 @@ Prefab:
       propertyPath: m_Name
       value: Nitro Block (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 1942926176905122, guid: 10a289c120f43034094bae865a3808f9, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 10a289c120f43034094bae865a3808f9, type: 2}
   m_IsPrefabAsset: 0
@@ -5265,6 +5273,10 @@ Prefab:
     - target: {fileID: 4304856341355776, guid: 10a289c120f43034094bae865a3808f9, type: 2}
       propertyPath: m_RootOrder
       value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1942926176905122, guid: 10a289c120f43034094bae865a3808f9, type: 2}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 10a289c120f43034094bae865a3808f9, type: 2}
@@ -9197,18 +9209,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
-    - target: {fileID: 1022698924072248, guid: a41d89016b10be24b81e78e4b13779a8, type: 2}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4240723854215698, guid: a41d89016b10be24b81e78e4b13779a8, type: 2}
-      propertyPath: m_LocalScale.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4240723854215698, guid: a41d89016b10be24b81e78e4b13779a8, type: 2}
-      propertyPath: m_LocalScale.y
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a41d89016b10be24b81e78e4b13779a8, type: 2}
   m_IsPrefabAsset: 0
@@ -11739,7 +11739,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1204994698
 Transform:
   m_ObjectHideFlags: 0
@@ -12414,6 +12414,10 @@ Prefab:
     - target: {fileID: 1942926176905122, guid: 10a289c120f43034094bae865a3808f9, type: 2}
       propertyPath: m_Name
       value: Nitro Block (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1942926176905122, guid: 10a289c120f43034094bae865a3808f9, type: 2}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 10a289c120f43034094bae865a3808f9, type: 2}
@@ -15133,10 +15137,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 1225643177991880, guid: a43fae7b0a1d9b04e95f85a73aa88906, type: 2}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a43fae7b0a1d9b04e95f85a73aa88906, type: 2}
   m_IsPrefabAsset: 0
@@ -15396,6 +15396,10 @@ Prefab:
       propertyPath: m_Name
       value: Nitro Block (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 1942926176905122, guid: 10a289c120f43034094bae865a3808f9, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 10a289c120f43034094bae865a3808f9, type: 2}
   m_IsPrefabAsset: 0
@@ -15611,7 +15615,7 @@ Transform:
   - {fileID: 1499842075}
   - {fileID: 876220044}
   m_Father: {fileID: 202100682}
-  m_RootOrder: 5
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &1559243609
 Rigidbody2D:
@@ -16068,7 +16072,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 202100682}
-  m_RootOrder: 7
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!81 &1583150697
 AudioListener:
@@ -16461,7 +16465,7 @@ Transform:
   - {fileID: 714845959}
   - {fileID: 1716604485}
   m_Father: {fileID: 202100682}
-  m_RootOrder: 4
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1627232795
 GameObject:
@@ -20854,7 +20858,7 @@ Transform:
   m_LocalScale: {x: 0.54, y: 0.54, z: 1}
   m_Children: []
   m_Father: {fileID: 202100682}
-  m_RootOrder: 6
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &2110967477
 Transform:
@@ -20899,7 +20903,7 @@ Transform:
   - {fileID: 218464729}
   - {fileID: 1097871795}
   m_Father: {fileID: 202100682}
-  m_RootOrder: 3
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &2121220139
 SpriteRenderer:

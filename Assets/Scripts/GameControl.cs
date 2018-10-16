@@ -56,8 +56,8 @@ public class GameControl : MonoBehaviour
     {
         if (NitrotimeLeft > 0)
         {
-            Debug.Log(NitrotimeLeft);
-            Debug.Log(Time.deltaTime);
+          //  Debug.Log(NitrotimeLeft);
+          //  Debug.Log(Time.deltaTime);
             NitrotimeLeft -= Time.deltaTime;
             if (NitrotimeLeft <= 0)
             {
@@ -68,7 +68,7 @@ public class GameControl : MonoBehaviour
         }
 
         NitroGauge.value = NitrotimeLeft / MaxNitro;
-        Debug.Log(NitrotimeLeft / MaxNitro);
+      //  Debug.Log(NitrotimeLeft / MaxNitro);
     }
 
     public void AddScore(int score)
