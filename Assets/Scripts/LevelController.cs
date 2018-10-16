@@ -37,7 +37,7 @@ public class LevelController : MonoBehaviour {
 
     public void GenerateLevel()
     {
-        Instantiate(Levels[CurrentLevel-1], new Vector3(0, 0, 0), Quaternion.identity);
+        //Instantiate(Levels[CurrentLevel-1], new Vector3(0, 0, 0), Quaternion.identity);
     }
 
     public void IncrementLevel()

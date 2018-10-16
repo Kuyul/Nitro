@@ -38,7 +38,7 @@ public class BallController : MonoBehaviour {
         {
             //Drag Left and Right to move the ball
             float moveAmount = Camera.main.ScreenToWorldPoint(Input.mousePosition).x - TouchPosition.x;
-            Vector2 newPosition = new Vector2(moveAmount, 0);
+            Vector2 newPosition = new Vector2(moveAmount * 1.5f, 0);
             Vector2 targetPosition = rb.position + newPosition;
             //Check whether new position of the ball is within the boundary, if not, don't move
             if(Mathf.Abs(targetPosition.x) < Boundary)

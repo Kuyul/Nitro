@@ -38,6 +38,7 @@ public class GameControl : MonoBehaviour
     // Use this for initialization
     void Start()
     {
+        Application.targetFrameRate = 300;
         if (Instance == null)
         {
             Instance = this;
