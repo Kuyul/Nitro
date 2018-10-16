@@ -10,8 +10,6 @@ public class GameControl : MonoBehaviour
 
     //Declare public variables
     public Text textCurrentScore;
-    public GameObject patternSpawnPt;
-    public GameObject[] patternPool;
     public TextMesh NitroText;
     public float MaxNitro = 3.0f;
 
