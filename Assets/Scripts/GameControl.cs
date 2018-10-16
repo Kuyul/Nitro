@@ -9,10 +9,12 @@ public class GameControl : MonoBehaviour
     public static GameControl Instance;
 
     //Declare public variables
-    public Text ScoreText;
+    public Text textCurrentScore;
+    public Text textCurrentLevel;
+    public Text textNextLevel;
     public GameObject patternSpawnPt;
     public GameObject[] patternPool;
-    public Slider NitroGauge;
+  //  public Slider NitroGauge;
     public float MaxNitro = 3.0f;
 
     public GameObject trail;
@@ -49,6 +51,10 @@ public class GameControl : MonoBehaviour
 
         //Globally initialise to non-nitro mode
         DeactivateNitro();
+
+        textCurrentLevel.text = PlayerPrefs.GetInt("currentLevel", 1).ToString();
+        textNextLevel.text = (PlayerPrefs.GetInt("currentLevel", 1) + 1).ToString();
+
     }
 
     //While Nitro is active, countdown nitro time until nitrotimeleft is less than 0, then deactivate nitro
@@ -67,14 +73,14 @@ public class GameControl : MonoBehaviour
             }
         }
 
-        NitroGauge.value = NitrotimeLeft / MaxNitro;
+     //   NitroGauge.value = NitrotimeLeft / MaxNitro;
       //  Debug.Log(NitrotimeLeft / MaxNitro);
     }
 
     public void AddScore(int score)
     {
         CurrentScore += score;
-        ScoreText.text = "Score: " + CurrentScore;
+        textCurrentScore.text = CurrentScore.ToString();
     }
 
     //Global Nitro Activation
