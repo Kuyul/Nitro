@@ -140,6 +140,6 @@ public class BallController : MonoBehaviour {
     public void DeactivateNitro()
     {
         GameControl.Instance.ActivateTrail(false);
-        transform.localScale = new Vector2(1.0f, 1.0f);
+        transform.localScale = new Vector2(.7f, .7f);
     }
 }
