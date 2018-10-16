@@ -20,6 +20,7 @@ public class GameControl : MonoBehaviour
     public GameObject platformLarge;
     public GameObject trailSide1;
     public GameObject trailSide2;
+    public GameObject Taptoplay;
 
     public bool Nitro = false;
 
@@ -32,6 +33,7 @@ public class GameControl : MonoBehaviour
     //Declare private variables
     private int CurrentScore = 0;
     private float NitrotimeLeft = 0;
+    private bool InitialMouseClick = false;
 
     // Use this for initialization
     void Start()
@@ -48,12 +50,23 @@ public class GameControl : MonoBehaviour
 
         //Globally initialise to non-nitro mode
         DeactivateNitro();
+        Time.timeScale = 0;
     }
 
     //While Nitro is active, countdown nitro time until nitrotimeleft is less than 0, then deactivate nitro
     private void Update()
     {
-        if (NitrotimeLeft > 0)
+        if (!InitialMouseClick)
+        {
+            if (Input.GetMouseButtonDown(0))
+            {
+                Time.timeScale = 1;
+                InitialMouseClick = true;
+                Taptoplay.SetActive(false);
+            }
+        }
+
+       if (NitrotimeLeft > 0)
         {
           //  Debug.Log(NitrotimeLeft);
           //  Debug.Log(Time.deltaTime);
@@ -98,7 +111,7 @@ public class GameControl : MonoBehaviour
         NitrotimeLeft += time;
         if(NitrotimeLeft >= MaxNitro)
         {
-            NitrotimeLeft = 3.0f;
+            NitrotimeLeft = MaxNitro;
         }
     }
 
