@@ -8,22 +8,16 @@ public class BallController : MonoBehaviour {
     //Declare public variables
     public Rigidbody2D DeathPool;
     public float DeathPoolSpeed = 0.5f;
-    public int NoPlatformsForNitro = 5;
-    public TextMesh NitroCount;
     public float Boundary = 1.6f;
 
     //Declare private variables
     private Vector3 TouchPosition;
     private bool IsDragging;
     private Rigidbody2D rb;
-    private int platformsPassed = 0;
-    private int platformsDestroyed = 0;
-    private SpriteMask sm;
 
     // Use this for initialization
     void Start () {
         rb = GetComponent<Rigidbody2D>();
-        sm = GetComponent<SpriteMask>();
     }
 	
 	// Update is called once per frame
@@ -52,7 +46,6 @@ public class BallController : MonoBehaviour {
             TouchPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         }
 
-        NitroCount.text = "(" + (NoPlatformsForNitro - platformsPassed) + ")";
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -69,8 +62,7 @@ public class BallController : MonoBehaviour {
                 Destroy(platformS, 2);
                 GameObject platformL = Instantiate(GameControl.Instance.platformLarge, localPosition, Quaternion.identity);
                 Destroy(platformL, 2);
-                platformsDestroyed++;
-                GameControl.Instance.AddScore(platformsDestroyed);
+                GameControl.Instance.AddScore(1);
             }
             //If Nitro mode is inactive, game over
             else
@@ -80,6 +72,7 @@ public class BallController : MonoBehaviour {
         }
 
         //On passing a platform, perform differing functions depending on its Nitro status
+        /* Depreciated
         if(collision.tag == "Pass")
         {
             GameControl.Instance.AddScore(1);
@@ -96,6 +89,16 @@ public class BallController : MonoBehaviour {
                 {
                     UpdateNitro(true);
                 }
+            }
+        }*/
+
+        if (collision.tag == "NitroBlock")
+        {
+            collision.gameObject.SetActive(false);
+            GameControl.Instance.AddNitroTime(0.5f);
+            if (!GameControl.Instance.Nitro)
+            {
+                UpdateNitro(true);
             }
         }
 
@@ -131,14 +134,12 @@ public class BallController : MonoBehaviour {
     public void ActivateNitro()
     {
         GameControl.Instance.ActivateTrail(true);
-        platformsPassed = 0; //Reset platforms passed count
-        sm.enabled = true;
+        transform.localScale = new Vector2(2.0f, 2.0f);
     }
 
     public void DeactivateNitro()
     {
         GameControl.Instance.ActivateTrail(false);
-        platformsDestroyed = 0; //Reset platforms destroyed count
-        sm.enabled = false;
+        transform.localScale = new Vector2(1.0f, 1.0f);
     }
 }
