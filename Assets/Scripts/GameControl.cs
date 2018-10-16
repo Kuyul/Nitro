@@ -117,4 +117,9 @@ public class GameControl : MonoBehaviour
     {
         Level.IncrementLevel();
     }
+
+    public Vector3 GetPlayerPosition()
+    {
+        return Player.GetCurrentPosition();
+    }
 }

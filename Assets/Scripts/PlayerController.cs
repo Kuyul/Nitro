@@ -36,4 +36,9 @@ public class PlayerController : MonoBehaviour {
         Vector3 velocity = new Vector3(0, newSpeed);
         rb.velocity = velocity;
     }
+
+    public Vector3 GetCurrentPosition()
+    {
+        return transform.position;
+    }
 }
