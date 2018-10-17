@@ -1646,6 +1646,7 @@ MonoBehaviour:
   textHighScore: {fileID: 324942439}
   NitroText: {fileID: 1142225265}
   MaxNitro: 2
+  GA: {fileID: 1648991424109944, guid: 8df5c0279ac55450db61087bb9b871b0, type: 2}
   trail: {fileID: 1170879792}
   trailCentre: {fileID: 755525320}
   trailNitro: {fileID: 17428839}

@@ -25,16 +25,16 @@ MonoBehaviour:
   UserMessagesFailed: 0
   CustomArea: 
   gameKey:
-  - b6ab449be0791ce9850e0ebdc680fb1c
+  - 9611e6cd3475bcaf396ddc3e6ddbf954
   secretKey:
-  - 17df7b7acb6b0fc54fe3d58a2a3254d7f3ce6723
+  - 6429f57b8db97591585f7f06dd5d344a91808d08
   Build:
   - 0.1
   SelectedPlatformStudio:
-  - Cross Era
+  - 
   SelectedPlatformGame:
-  - Nitros
-  SelectedPlatformGameID: bced0000
+  - 
+  SelectedPlatformGameID: f5ed0000
   SelectedStudio: 01000000
   SelectedGame: 01000000
   NewVersion: 
@@ -42,7 +42,7 @@ MonoBehaviour:
   SignUpOpen: 0
   StudioName: CrossEra
   GameName: Nitro
-  EmailGA: peyopeyo92@gmail.com
+  EmailGA: crossera.0@gmail.com
   IntroScreen: 0
   InfoLogEditor: 1
   InfoLogBuild: 1

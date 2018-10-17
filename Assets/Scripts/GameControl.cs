@@ -16,6 +16,7 @@ public class GameControl : MonoBehaviour
     public Text textHighScore;
     public TextMesh NitroText;
     public float MaxNitro = 3.0f;
+    public GameObject GA;
 
     public GameObject trail;
     public GameObject trailCentre;
@@ -63,6 +64,12 @@ public class GameControl : MonoBehaviour
         Time.timeScale = 0;
 
         textHighScore.text = "Best Score : " + PlayerPrefs.GetInt("highscore", 0);
+
+        GameObject analytics = GameObject.Find("/GameAnalytics");
+        if(!analytics){
+            analytics = Instantiate(GA);
+            analytics.name = "GameAnalytics";
+        }
     }
 
     //While Nitro is active, countdown nitro time until nitrotimeleft is less than 0, then deactivate nitro
@@ -142,8 +149,8 @@ public class GameControl : MonoBehaviour
     //Call level controller to set new level
     public void LevelComplete()
     {
-
-        GameAnalytics.NewProgressionEvent(GAProgressionStatus.Complete, "game", CurrentScore);
+        //Ga
+        AddCompleteProgression();
 
         Level.IncrementLevel();
         StartCoroutine("timer");
@@ -160,11 +167,16 @@ public class GameControl : MonoBehaviour
         ball.SetActive(false);
         Player.SetSpeed(0);
         StartCoroutine("timer");
+        AddCompleteProgression();
     }
 
     IEnumerator timer()
     {
         yield return new WaitForSeconds(1f);
         SceneManager.LoadScene(0);
+    }
+
+    private void AddCompleteProgression(){
+        GameAnalytics.NewProgressionEvent(GAProgressionStatus.Complete, "game", CurrentScore);
     }
 }
