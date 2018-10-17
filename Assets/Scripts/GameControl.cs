@@ -2,9 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
 using UnityEngine.SceneManagement;
-
 using GameAnalyticsSDK;
 
 
@@ -15,6 +13,7 @@ public class GameControl : MonoBehaviour
 
     //Declare public variables
     public Text textCurrentScore;
+    public Text HighScoreText;
     public TextMesh NitroText;
     public float MaxNitro = 3.0f;
 
@@ -69,10 +68,12 @@ public class GameControl : MonoBehaviour
         {
             if (Input.GetMouseButtonDown(0))
             {
+                GameAnalytics.Initialize();
                 GameAnalytics.NewProgressionEvent(GAProgressionStatus.Start, "game");
                 Time.timeScale = 1;
                 InitialMouseClick = true;
                 Taptoplay.SetActive(false);
+                HighScoreText.SetActive(false);
             }
         }
 
