@@ -49,6 +49,17 @@ public class BallController : MonoBehaviour {
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+
+        if (collision.tag == "NitroBlock")
+        {
+            collision.gameObject.SetActive(false);
+            GameControl.Instance.AddNitroTime(0.5f);
+            if (!GameControl.Instance.Nitro)
+            {
+                UpdateNitro(true);
+            }
+        }
+
         //On colliding on a platform, perform differing function depending on its Nitro status
         if (collision.tag == "Platform")
         {
@@ -67,16 +78,6 @@ public class BallController : MonoBehaviour {
             else
             {
                 GameControl.Instance.Die();
-            }
-        }
-
-        if (collision.tag == "NitroBlock")
-        {
-            collision.gameObject.SetActive(false);
-            GameControl.Instance.AddNitroTime(0.5f);
-            if (!GameControl.Instance.Nitro)
-            {
-                UpdateNitro(true);
             }
         }
 
