@@ -67,4 +67,9 @@ public class LevelController : MonoBehaviour {
         level++;
         PlayerPrefs.SetInt("currentLevel", level);
     }
+
+    public int GetCurrentLevel()
+    {
+        return CurrentLevel;
+    }
 }

@@ -96,7 +96,7 @@ public class GameControl : MonoBehaviour
 
     public void AddScore(int score)
     {
-        CurrentScore += score;
+        CurrentScore += score * Level.GetCurrentLevel();
         textCurrentScore.text = CurrentScore.ToString();
 
         if(CurrentScore>PlayerPrefs.GetInt("highscore",0))
