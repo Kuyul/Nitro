@@ -10,6 +10,7 @@ TagManager:
   - Deathpool
   - Goal
   - NitroBlock
+  - Ball
   layers:
   - Default
   - TransparentFX
