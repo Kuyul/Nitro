@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using GameAnalyticsSDK;
 
 public class GameControl : MonoBehaviour
 {
@@ -60,6 +61,7 @@ public class GameControl : MonoBehaviour
         {
             if (Input.GetMouseButtonDown(0))
             {
+                GameAnalytics.NewProgressionEvent(GAProgressionStatus.Start, "game");
                 Time.timeScale = 1;
                 InitialMouseClick = true;
                 Taptoplay.SetActive(false);
@@ -127,6 +129,7 @@ public class GameControl : MonoBehaviour
     //Call level controller to set new level
     public void LevelComplete()
     {
+        GameAnalytics.NewProgressionEvent(GAProgressionStatus.Complete, "game", CurrentScore);
         Level.IncrementLevel();
     }
 
