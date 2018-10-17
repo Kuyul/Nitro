@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class BallController : MonoBehaviour {
 
@@ -67,30 +66,9 @@ public class BallController : MonoBehaviour {
             //If Nitro mode is inactive, game over
             else
             {
-                SceneManager.LoadScene(0);
+                GameControl.Instance.Die();
             }
         }
-
-        //On passing a platform, perform differing functions depending on its Nitro status
-        /* Depreciated
-        if(collision.tag == "Pass")
-        {
-            GameControl.Instance.AddScore(1);
-            //When Nitro mode
-            if (GameControl.Instance.Nitro)
-            {
-                UpdateNitro(false);
-            }
-            else
-            //During normal mode, fill up nitro gauge, and set nitro mode to active when it passes the nitro threshold
-            {
-                platformsPassed++;
-                if (platformsPassed >= NoPlatformsForNitro)
-                {
-                    UpdateNitro(true);
-                }
-            }
-        }*/
 
         if (collision.tag == "NitroBlock")
         {
@@ -102,17 +80,13 @@ public class BallController : MonoBehaviour {
             }
         }
 
-        //Die on Deathpool
-        if (collision.tag == "Deathpool")
-        {
-            SceneManager.LoadScene(0);
-        }
-
         //Goal
         if (collision.tag == "Goal")
         {
+            Instantiate(GameControl.Instance.goaleffecttop, collision.transform.position,GameControl.Instance.goaleffecttop.transform.rotation);
+            Instantiate(GameControl.Instance.goaleffectbottom, collision.transform.position, GameControl.Instance.goaleffectbottom.transform.rotation);
+            collision.gameObject.SetActive(false);
             GameControl.Instance.LevelComplete();
-            SceneManager.LoadScene(0);
         }
     }
 

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GameControl : MonoBehaviour
 {
@@ -18,6 +19,10 @@ public class GameControl : MonoBehaviour
     public GameObject trailNitro;
     public GameObject platformSmall;
     public GameObject platformLarge;
+    public GameObject death;
+    public GameObject goaleffecttop;
+    public GameObject goaleffectbottom;
+    public GameObject ball;
     public GameObject trailSide1;
     public GameObject trailSide2;
     public GameObject Taptoplay;
@@ -127,11 +132,27 @@ public class GameControl : MonoBehaviour
     //Call level controller to set new level
     public void LevelComplete()
     {
+        //Player.SetSpeed(0);
         Level.IncrementLevel();
+        StartCoroutine("timer");
     }
 
     public Vector3 GetPlayerPosition()
     {
         return Player.GetCurrentPosition();
+    }
+
+    public void Die()
+    {   
+        Instantiate(death, ball.transform.position, Quaternion.identity);
+        ball.SetActive(false);
+        Player.SetSpeed(0);
+        StartCoroutine("timer");
+    }
+
+    IEnumerator timer()
+    {
+        yield return new WaitForSeconds(1f);
+        SceneManager.LoadScene(0);
     }
 }

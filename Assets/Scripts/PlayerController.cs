@@ -30,7 +30,7 @@ public class PlayerController : MonoBehaviour {
         return CurrentSpeed;
     }
 
-    private void SetSpeed(float newSpeed)
+    public void SetSpeed(float newSpeed)
     {
         CurrentSpeed = newSpeed;
         Vector3 velocity = new Vector3(0, newSpeed);

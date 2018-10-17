@@ -50,7 +50,7 @@ public class LevelController : MonoBehaviour {
             PatternScript ps = p.GetComponent<PatternScript>();
             Offset += Mathf.Abs(ps.GetBottomPositionOffset().y); //add bottom offset
             Vector3 offsetVector = new Vector3(0, Offset, 0);
-            GameObject pat = Instantiate(p, InitialPoint.position + offsetVector, Quaternion.identity);
+            Instantiate(p, InitialPoint.position + offsetVector, Quaternion.identity);
             Offset += ps.GetTopPositionOffset().y; //add top offset
             //Give 2 extra units of offset
             Offset += 2.0f;
@@ -59,7 +59,6 @@ public class LevelController : MonoBehaviour {
         Offset += 3.0f;
         Vector3 goalPos = new Vector3(0, Offset, 0);
         Instantiate(Goal, goalPos, Quaternion.identity);
-
     }
 
     public void IncrementLevel()

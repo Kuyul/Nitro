@@ -215,7 +215,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c0f38de06207b61468278615295a6ba2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HowManyPatterns: 10
+  HowManyPatterns: 1
   textCurrentLevel: {fileID: 1081526387}
   textNextLevel: {fileID: 215555226}
   Patterns:
@@ -1285,7 +1285,6 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 714845958}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -4.4, y: 0, z: 0}
   m_LocalScale: {x: 0.098, y: 1, z: 0}
   m_Children: []
   m_Father: {fileID: 1622266578}
@@ -1571,6 +1570,12 @@ MonoBehaviour:
     type: 2}
   platformLarge: {fileID: 1711986553584254, guid: 604ec8be11d767e479206cd7cb12a222,
     type: 2}
+  death: {fileID: 1586666571610284, guid: 35947155c6e133e43b6fb0da2329908f, type: 2}
+  goaleffecttop: {fileID: 1031697608883368, guid: dcfb80e57a4c30d499111a6ab0a1b465,
+    type: 2}
+  goaleffectbottom: {fileID: 1296562527042612, guid: 020d4a2e3c1f92d41b7b114e2e3502ac,
+    type: 2}
+  ball: {fileID: 1559243603}
   trailSide1: {fileID: 1577537639}
   trailSide2: {fileID: 857743242}
   Taptoplay: {fileID: 205423644}
@@ -2309,7 +2314,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1622266576}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.79, y: 0, z: 0}
+  m_LocalPosition: {x: 2.75, y: 0, z: 0}
   m_LocalScale: {x: 0.1, y: 1.5, z: 0}
   m_Children:
   - {fileID: 714845959}
