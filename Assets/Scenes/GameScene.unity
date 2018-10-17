@@ -199,7 +199,7 @@ GameObject:
   - component: {fileID: 139976088}
   m_Layer: 0
   m_Name: LevelGenerator
-  m_TagString: Untagged
+  m_TagString: Ball
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -215,10 +215,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c0f38de06207b61468278615295a6ba2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HowManyPatterns: 1
+  HowManyPatterns: 5
   textCurrentLevel: {fileID: 1081526387}
   textNextLevel: {fileID: 215555226}
   Patterns:
+  - {fileID: 1699051155065710, guid: e2db9633f8f4e814cb684f51a90c813f, type: 2}
+  - {fileID: 1103301071563836, guid: 83ba04ce273583948a8b95be6edefc81, type: 2}
+  - {fileID: 1139053124764732, guid: 570944a1ab02ed84390b81266cdf27c7, type: 2}
+  - {fileID: 1976345464808918, guid: 08e467e0ecd44b5408bb84292702fe3f, type: 2}
+  - {fileID: 1164622985048692, guid: 128b5a35528273e47903f6928fa09012, type: 2}
   - {fileID: 1922012091145324, guid: c7dd29b1b5f334948b28143e8449a284, type: 2}
   - {fileID: 1695677592843912, guid: c78b6ff38c0535c41a1d88bdda8d97d7, type: 2}
   - {fileID: 1808958538521160, guid: 15d7ef6f9efa33c4080393425c0d0dfb, type: 2}
@@ -1534,48 +1539,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!1001 &906241344
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 4688132718936460, guid: e2db9633f8f4e814cb684f51a90c813f, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4688132718936460, guid: e2db9633f8f4e814cb684f51a90c813f, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 6.23
-      objectReference: {fileID: 0}
-    - target: {fileID: 4688132718936460, guid: e2db9633f8f4e814cb684f51a90c813f, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4688132718936460, guid: e2db9633f8f4e814cb684f51a90c813f, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4688132718936460, guid: e2db9633f8f4e814cb684f51a90c813f, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4688132718936460, guid: e2db9633f8f4e814cb684f51a90c813f, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4688132718936460, guid: e2db9633f8f4e814cb684f51a90c813f, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4688132718936460, guid: e2db9633f8f4e814cb684f51a90c813f, type: 2}
-      propertyPath: m_RootOrder
-      value: 6
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: e2db9633f8f4e814cb684f51a90c813f, type: 2}
-  m_IsPrefabAsset: 0
 --- !u!1 &1023894089
 GameObject:
   m_ObjectHideFlags: 0
@@ -1613,10 +1576,12 @@ MonoBehaviour:
     type: 2}
   platformLarge: {fileID: 1711986553584254, guid: 604ec8be11d767e479206cd7cb12a222,
     type: 2}
-  death: {fileID: 0}
-  goaleffecttop: {fileID: 0}
-  goaleffectbottom: {fileID: 0}
-  ball: {fileID: 0}
+  death: {fileID: 1586666571610284, guid: 35947155c6e133e43b6fb0da2329908f, type: 2}
+  goaleffecttop: {fileID: 1031697608883368, guid: dcfb80e57a4c30d499111a6ab0a1b465,
+    type: 2}
+  goaleffectbottom: {fileID: 1296562527042612, guid: 020d4a2e3c1f92d41b7b114e2e3502ac,
+    type: 2}
+  ball: {fileID: 1559243603}
   trailSide1: {fileID: 1577537639}
   trailSide2: {fileID: 857743242}
   Taptoplay: {fileID: 205423644}
