@@ -1534,6 +1534,48 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!1001 &906241344
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4688132718936460, guid: e2db9633f8f4e814cb684f51a90c813f, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4688132718936460, guid: e2db9633f8f4e814cb684f51a90c813f, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 6.23
+      objectReference: {fileID: 0}
+    - target: {fileID: 4688132718936460, guid: e2db9633f8f4e814cb684f51a90c813f, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4688132718936460, guid: e2db9633f8f4e814cb684f51a90c813f, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4688132718936460, guid: e2db9633f8f4e814cb684f51a90c813f, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4688132718936460, guid: e2db9633f8f4e814cb684f51a90c813f, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4688132718936460, guid: e2db9633f8f4e814cb684f51a90c813f, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4688132718936460, guid: e2db9633f8f4e814cb684f51a90c813f, type: 2}
+      propertyPath: m_RootOrder
+      value: 6
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: e2db9633f8f4e814cb684f51a90c813f, type: 2}
+  m_IsPrefabAsset: 0
 --- !u!1 &1023894089
 GameObject:
   m_ObjectHideFlags: 0
@@ -1571,12 +1613,10 @@ MonoBehaviour:
     type: 2}
   platformLarge: {fileID: 1711986553584254, guid: 604ec8be11d767e479206cd7cb12a222,
     type: 2}
-  death: {fileID: 1586666571610284, guid: 35947155c6e133e43b6fb0da2329908f, type: 2}
-  goaleffecttop: {fileID: 1031697608883368, guid: dcfb80e57a4c30d499111a6ab0a1b465,
-    type: 2}
-  goaleffectbottom: {fileID: 1296562527042612, guid: 020d4a2e3c1f92d41b7b114e2e3502ac,
-    type: 2}
-  ball: {fileID: 1559243603}
+  death: {fileID: 0}
+  goaleffecttop: {fileID: 0}
+  goaleffectbottom: {fileID: 0}
+  ball: {fileID: 0}
   trailSide1: {fileID: 1577537639}
   trailSide2: {fileID: 857743242}
   Taptoplay: {fileID: 205423644}
@@ -2077,7 +2117,7 @@ GameObject:
   - component: {fileID: 1559243604}
   m_Layer: 0
   m_Name: Ball
-  m_TagString: Untagged
+  m_TagString: Ball
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
