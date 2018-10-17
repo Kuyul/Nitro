@@ -2,7 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+<<<<<<< HEAD
 using UnityEngine.SceneManagement;
+=======
+using GameAnalyticsSDK;
+>>>>>>> 7baeeb9309ee753322305f0edd42db5ce2468459
 
 public class GameControl : MonoBehaviour
 {
@@ -65,6 +69,7 @@ public class GameControl : MonoBehaviour
         {
             if (Input.GetMouseButtonDown(0))
             {
+                GameAnalytics.NewProgressionEvent(GAProgressionStatus.Start, "game");
                 Time.timeScale = 1;
                 InitialMouseClick = true;
                 Taptoplay.SetActive(false);
@@ -132,7 +137,11 @@ public class GameControl : MonoBehaviour
     //Call level controller to set new level
     public void LevelComplete()
     {
+<<<<<<< HEAD
         //Player.SetSpeed(0);
+=======
+        GameAnalytics.NewProgressionEvent(GAProgressionStatus.Complete, "game", CurrentScore);
+>>>>>>> 7baeeb9309ee753322305f0edd42db5ce2468459
         Level.IncrementLevel();
         StartCoroutine("timer");
     }
