@@ -13,7 +13,7 @@ public class GameControl : MonoBehaviour
 
     //Declare public variables
     public Text textCurrentScore;
-    public Text HighScoreText;
+    public Text textHighScore;
     public TextMesh NitroText;
     public float MaxNitro = 3.0f;
 
@@ -29,6 +29,8 @@ public class GameControl : MonoBehaviour
     public GameObject trailSide1;
     public GameObject trailSide2;
     public GameObject Taptoplay;
+    public GameObject highScore;
+
 
     public bool Nitro = false;
 
@@ -59,6 +61,8 @@ public class GameControl : MonoBehaviour
         //Globally initialise to non-nitro mode
         DeactivateNitro();
         Time.timeScale = 0;
+
+        textHighScore.text = "Best Score : " + PlayerPrefs.GetInt("highscore", 0);
     }
 
     //While Nitro is active, countdown nitro time until nitrotimeleft is less than 0, then deactivate nitro
@@ -73,14 +77,12 @@ public class GameControl : MonoBehaviour
                 Time.timeScale = 1;
                 InitialMouseClick = true;
                 Taptoplay.SetActive(false);
-                HighScoreText.SetActive(false);
+                highScore.SetActive(false);
             }
         }
 
        if (NitrotimeLeft > 0)
         {
-          //  Debug.Log(NitrotimeLeft);
-          //  Debug.Log(Time.deltaTime);
             NitrotimeLeft -= Time.deltaTime;
             if (NitrotimeLeft <= 0)
             {
@@ -90,15 +92,17 @@ public class GameControl : MonoBehaviour
             }
             NitroText.text = NitrotimeLeft.ToString("#.#");
         }
-
-     //   NitroGauge.value = NitrotimeLeft / MaxNitro;
-      //  Debug.Log(NitrotimeLeft / MaxNitro);
     }
 
     public void AddScore(int score)
     {
         CurrentScore += score;
         textCurrentScore.text = CurrentScore.ToString();
+
+        if(CurrentScore>PlayerPrefs.GetInt("highscore",0))
+        {
+            PlayerPrefs.SetInt("highscore", CurrentScore);
+        }
     }
 
     //Global Nitro Activation
